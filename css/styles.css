@@ -1,0 +1,65 @@
+:root{ /* asi se crean los recursos */
+    --blancoFondo: #ffffff;
+    --negroLetras: #212121;
+    --cremaLetrasCabecera:  #d48200;
+    --cafeBotones: #264c2c;
+    --cafeFuerte: #9db5cd;
+    --verde: #457e42;
+ }
+ 
+ html{
+    font-size: 62.5%;
+ }
+ body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Titillium Web', sans-serif;  /* fuente que se usara de el link que se indica en el html*/
+ }
+ .titulo{
+     text-align: center; 
+     font-size:  3.8rem;
+  }
+  .titulo span{
+     font-size: 2rem;
+     color: var(--cremaLetrasCabecera);/* asi mando a llamar las variables de los recursos */
+ }
+ 
+ .contenedor{
+    width: 120rem;
+    /*
+    Puede ser asi
+    margin-top: 0; margen de arriba a abajo 
+    margin-right: auto; margin de la derecha al centro 
+    margin-bottom: 0;margen de arriba hacia abajo 
+    margin-left: auto; margen de la izquierda hacia el centro
+    
+    o asi
+    margin: 0 auto 0 auto;
+ 
+    pero si dos valores se presentan 2 veces igual como arriba se pueden poner solo dos veces el 
+    valor y css lo tomara como los 4 valores que le indico
+    */
+    margin: 0 auto;
+ }
+ 
+ .nav-bg{
+    background-color: var(--cremaLetrasCabecera);
+ }
+ 
+ .navPrincipal{
+    padding: 1rem; /*padding es el espacio que hay por dentro del elemento, tiene atributos como el margin (top, left, right, bottom) */
+    display: flex; /* la propiedad flexbox solo se debe de usar en los elemntos padre */
+    justify-content: space-between;/* la propiedad justify-content permite mover el contenido horizontalmente
+    puede ser "center" pa centrarlo, "start" para ponerlo de lado izquerdo, "flex-end" para lado derecho, y para distribuir
+    los elementos hay "space-between", "space-around" y "space-evenly" */
+ }
+ 
+ .navPrincipal a{
+    color: var(--negroLetras);
+    text-decoration: none; /* es para quitar la linea que se pone debajo de los enlaces */
+ 
+ }
+ 
+ p{
+    background-color: var(--verde);
+ }
+ 
