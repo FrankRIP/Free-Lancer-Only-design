@@ -24,7 +24,7 @@
  }
  
  .contenedor{
-    width: 120rem;
+    max-width: 120rem;
     /*
     Puede ser asi
     margin-top: 0; margen de arriba a abajo 
@@ -46,20 +46,42 @@
  }
  
  .navPrincipal{
-    padding: 1rem; /*padding es el espacio que hay por dentro del elemento, tiene atributos como el margin (top, left, right, bottom) */
     display: flex; /* la propiedad flexbox solo se debe de usar en los elemntos padre */
-    justify-content: space-between;/* la propiedad justify-content permite mover el contenido horizontalmente
+    flex-direction: column;
+    align-items: center;
+}
+ @media (min-width: 780px){
+     .navPrincipal{
+        flex-direction: row;
+        justify-content: space-between;/* la propiedad justify-content permite mover el contenido horizontalmente
     puede ser "center" pa centrarlo, "start" para ponerlo de lado izquerdo, "flex-end" para lado derecho, y para distribuir
     los elementos hay "space-between", "space-around" y "space-evenly" */
+    
+     }
  }
- 
+
  .navPrincipal a{
     color: var(--negroLetras);
     text-decoration: none; /* es para quitar la linea que se pone debajo de los enlaces */
- 
+    font-size: 2rem;
+    font-weight: 700; /* esta propiedad es para volver negrita la letra */
  }
+
  
  p{
     background-color: var(--verde);
  }
  
+ .navPrincipal a:hover{
+    background-color: var(--verde);
+    color: var(--blancoFondo);
+    /*padding: 1rem; padding es el espacio que hay por dentro del elemento, tiene atributos como el margin (top, left, right, bottom) */
+ }
+
+.hero{
+    background-image: url(../img/hero.jpg); /*esto es para ponerle fondo de imagen a el diseño*/
+    background-repeat: no-repeat;/*para que no se repita la imagen y se ponga un asola vez*/
+    background-size: cover;/*para que agarre todo el ancho disponible en el diseño*/
+    height: 450px;
+    padding: 20px;
+}
