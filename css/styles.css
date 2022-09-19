@@ -1,23 +1,39 @@
 :root{ /* asi se crean los recursos */
     --blancoFondo: #ffffff;
-    --negroLetras: #212121;
-    --cremaLetrasCabecera:  #d48200;
+    --negroLetras: #343778;
+    --cremaLetrasCabecera:  #ffa646;
     --cafeBotones: #264c2c;
     --cafeFuerte: #9db5cd;
-    --verde: #457e42;
+    --verde: #33a9ac;
  }
  
  html{
     font-size: 62.5%;
+    box-sizing: border-box; /*esto es para que si quiero que algum elemento mida por ejemplo 450px
+    y le pongo un padding de 20px ya no afecte al tamaño que le indique al incio sumando 40px de cada lado
+    si no que se mantendran los 450px*/
  }
+ *, *:before, *:after{ /* *significa que seleccionara todos los elementos del html
+    */
+   box-sizing: inherit;
+ }
+h1{
+   font-size:  3.8rem;
+}
+h2{
+   font-size:  2.8rem;
+}
+h3{
+   font-size:  1.8rem;
+}
+h1, h2, h3{
+   text-align: center;
+}
  body{
     font-size: 16px; /* 1rem = 10px */
     font-family: 'Titillium Web', sans-serif;  /* fuente que se usara de el link que se indica en el html*/
  }
- .titulo{
-     text-align: center; 
-     font-size:  3.8rem;
-  }
+
   .titulo span{
      font-size: 2rem;
      color: var(--cremaLetrasCabecera);/* asi mando a llamar las variables de los recursos */
@@ -40,6 +56,24 @@
     */
     margin: 0 auto;
  }
+ .boton{
+   background-color: var(--cremaLetrasCabecera);
+   color: var(--negroLetras);
+   padding: 1rem 3rem;
+   margin-top: 1rem;
+   font-size: 2rem;
+   text-decoration: none;
+   font-weight: bold; /*para hacerla en negritas */
+   border-radius: 5px;
+   width: 60%;
+   text-align: center;
+
+ }
+ @media (min-widht: 480px){
+     .boton{
+      width: auto;
+     }
+ }
  
  .nav-bg{
     background-color: var(--cremaLetrasCabecera);
@@ -52,7 +86,7 @@
 }
  @media (min-width: 780px){
      .navPrincipal{
-        flex-direction: row;
+        flex-direction: row; /*display flex alinea de izquiera a derecha y row lo hcae en forma de bloques */
         justify-content: space-between;/* la propiedad justify-content permite mover el contenido horizontalmente
     puede ser "center" pa centrarlo, "start" para ponerlo de lado izquerdo, "flex-end" para lado derecho, y para distribuir
     los elementos hay "space-between", "space-around" y "space-evenly" */
@@ -66,11 +100,6 @@
     font-size: 2rem;
     font-weight: 700; /* esta propiedad es para volver negrita la letra */
  }
-
- 
- p{
-    background-color: var(--verde);
- }
  
  .navPrincipal a:hover{
     background-color: var(--verde);
@@ -83,5 +112,28 @@
     background-repeat: no-repeat;/*para que no se repita la imagen y se ponga un asola vez*/
     background-size: cover;/*para que agarre todo el ancho disponible en el diseño*/
     height: 450px;
-    padding: 20px;
+    position: relative; /* la posicion de la clase padre debe ir en relativa para que la clase hija
+    se pueda almacenar de forma absoluta */
+}
+.contenido-hero{
+   position: absolute;
+   background-color: rgb(0 0 0 / 50%);
+   width: 100%;
+   height: 100%;
+
+   /*Codigo base para centrar elementos en cualquier proyecto */
+   display: flex; /*alineo horizontalmente de izquierda a derecha */
+   flex-direction: column;/*alineo en colunma de arriba hacia abajo */
+   align-items: center;/*centro los elementos de la clase (alineo verticalmente) */
+   justify-content: center;/* centro los elementos de la clase (alineo horizontalmente)*/
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+   color: var(--blancoFondo);
+}
+.ubicacion{
+   display: flex;
+   justify-content: center;
+
 }
